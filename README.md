@@ -1,0 +1,1 @@
+#XKCD Fetch Random Comic
