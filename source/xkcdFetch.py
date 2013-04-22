@@ -11,18 +11,13 @@ from bs4 import BeautifulSoup
 
 This program downloads a random image from xkcd to the directory from which the program was called from
 
-This script is modified from the one by Jeremy Keeshin (https://github.com/jkeesh).
+This script is based on code by Jeremy Keeshin's scpd scraper (https://github.com/jkeesh).
 
-Unfortunately, there are lots of dependencies to get it up and running
-1. Handbrake CLI, for converting to mp4: http://handbrake.fr/downloads2.php
-2. BeautifulSoup for parsing: http://www.crummy.com/software/BeautifulSoup/
-3. Mechanize for emulating a browser, http://wwwsearch.sourceforge.net/mechanize/
+In order for this to work you will need to download a few dependencies
+1. BeautifulSoup for parsing: http://www.crummy.com/software/BeautifulSoup/
+2. Mechanize for emulating a browser, http://wwwsearch.sourceforge.net/mechanize/
 
-Usage: python scrape.py [Stanford ID] "Interactive Computer Graphics"
-
-The way I use it is to keep a folder of videos, and once I have watched them, move them
-into a subfolder called watched. So it also wont redowload files that are in a subfolder
-called watched.
+Usage: python /xkcdFetch.py "filePath" "fileName"
 
 
 """
@@ -90,7 +85,7 @@ def dowloadRandomImage(urlBase, filePath = "./", fileName = "xkcdComic.png"):
 
 
 def malformedInput():
-    print 'Malformed Input: Usage- ./XKCDscrape.py "filePath" "fileName"'
+    print 'Malformed Input: Usage- ./xkcdFetch.py "filePath" "fileName"'
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
